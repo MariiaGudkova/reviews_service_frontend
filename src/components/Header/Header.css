@@ -1,0 +1,34 @@
+.header {
+  font-family: "Roboto", sans-serif;
+}
+
+.header__logo:hover {
+  opacity: 0.6;
+}
+
+.header__nav-link:hover {
+  opacity: 0.6;
+}
+
+.header__search {
+  border-color: white;
+}
+
+.header__search::placeholder {
+  color: grey;
+}
+
+.header__search:focus,
+.header__search:active {
+  border-color: white;
+  box-shadow: none;
+}
+
+.header__search-logo {
+  background-color: white;
+  border-color: white;
+}
+
+.header__button:hover {
+  opacity: 0.6;
+}
