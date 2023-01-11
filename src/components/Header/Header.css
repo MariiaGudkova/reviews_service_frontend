@@ -1,4 +1,5 @@
 .header {
+  display: block;
   font-family: "Roboto", sans-serif;
 }
 
@@ -35,9 +36,10 @@
   opacity: 0.6;
 }
 
-.header__button:active {
-  background-color: #00d1cd !important;
-  border-color: #00d1cd !important;
+.btn:first-child:active {
+  background-color: transparent;
+  border-color: white;
+  color: white;
   opacity: 1;
 }
 
@@ -59,5 +61,11 @@
 }
 
 .header__lang-dropdown-item:active {
-  background-color: #00d1cd;
+  background-color: #212529;
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    display: none;
+  }
 }

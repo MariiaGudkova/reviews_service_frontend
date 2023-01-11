@@ -1,0 +1,144 @@
+.mobile-header {
+  display: none;
+  font-family: "Roboto", sans-serif;
+}
+
+.mobile-container {
+  width: 100%;
+}
+
+.mobile-header__burger {
+  background-color: transparent;
+  border: none;
+}
+
+.mobile-header__burger:hover,
+.mobile-header__burger:active {
+  background-color: transparent;
+  border: none;
+  color: white;
+  opacity: 0.6;
+}
+
+.mobile-header__burger-button:focus {
+  box-shadow: none;
+}
+
+.mobile-header__nav-link {
+  text-align: center;
+}
+
+.mobile-header__logo:hover {
+  opacity: 0.6;
+}
+
+.mobile-header__img {
+  width: 150px;
+}
+
+.mobile-header__nav-link:hover {
+  opacity: 0.6;
+}
+
+.mobile-header__search {
+  border-color: white;
+}
+
+.mobile-header__search::placeholder {
+  color: grey;
+}
+
+.mobile-header__search:active {
+  border-color: white;
+  box-shadow: none;
+}
+
+.mobile-header__search-logo {
+  background-color: white;
+  border-color: white;
+}
+
+.mobile-header__button {
+  text-align: center;
+  padding-right: 0;
+  border: none;
+}
+
+.mobile-header__button:hover {
+  background-color: transparent;
+  color: white;
+  opacity: 0.6;
+}
+
+.mobile-header__button:active {
+  background-color: transparent;
+  opacity: 1;
+}
+
+.mobile-header__search {
+  background-color: transparent;
+}
+
+.offcanvas.offcanvas-top {
+  border: none;
+}
+
+.header__form-container {
+  background-color: white;
+  align-items: baseline;
+}
+
+.mobile-header__lang-button {
+  border: none;
+}
+
+.mobile-header__lang-button::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0.3em solid;
+  border-left: 0.3em solid transparent;
+}
+
+.mobile-header__lang-button:hover,
+.mobile-header__lang-button:focus,
+.mobile-header__lang-button:active {
+  opacity: 0.6;
+}
+
+.mobile-header__lang-dropdown-menu {
+  text-align: center;
+  border: none;
+  transform: translate3d(123px, -54px, 0px);
+}
+
+.mobile-header__lang-dropdown-item {
+  cursor: pointer;
+}
+
+.mobile-header__lang-dropdown-item:hover {
+  opacity: 0.6;
+}
+
+.mobile-header__lang-dropdown-item:active {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 1200px) {
+  .mobile-header {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mobile-header__img {
+    width: 105px;
+  }
+
+  .mobile-header__button {
+    font-size: 1rem !important;
+  }
+}

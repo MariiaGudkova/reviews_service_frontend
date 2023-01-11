@@ -107,19 +107,19 @@ function Header(props) {
               </button>
             )}
           </div>
-          <div class="btn-group">
+          <div className="btn-group">
             <button
               type="button"
-              class="header__lang-button btn btn-outline-light dropdown-toggle text-white"
+              className="header__lang-button btn btn-outline-light dropdown-toggle text-white"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
               <i className="bi bi-globe me-1"></i>
               RU
             </button>
-            <ul class="header__lang-dropdown-menu dropdown-menu dropdown-menu-dark">
-              <li class="header__lang-dropdown-item dropdown-item">RU</li>
-              <li class="header__lang-dropdown-item dropdown-item">EN</li>
+            <ul className="header__lang-dropdown-menu dropdown-menu dropdown-menu-dark">
+              <li className="header__lang-dropdown-item dropdown-item">RU</li>
+              <li className="header__lang-dropdown-item dropdown-item">EN</li>
             </ul>
           </div>
         </div>
