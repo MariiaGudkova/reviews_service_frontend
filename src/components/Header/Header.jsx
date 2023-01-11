@@ -1,60 +1,74 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import headerLogo from "../../images/header_logo.png";
+import { routes } from "../../utils/routes";
 
-function Header() {
+function Header(props) {
+  const { isLogged, isAdmin } = props;
+
   return (
     <header className="header p-3 bg-dark text-white">
       <div className="container">
         <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a
-            href="/"
+          <Link
+            to={routes.baseRoute}
             className="header__logo d-flex align-items-center mb-2 me-lg-auto mb-lg-0 text-white text-decoration-none"
           >
             <img src={headerLogo} alt="logo" width="150px" />
-          </a>
+          </Link>
 
           <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <a
-                href="#"
+              <Link
+                to={routes.games}
                 className="header__nav-link nav-link px-2 me-2 text-white"
               >
                 ИГРЫ
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to={routes.films}
                 className="header__nav-link nav-link px-2 me-2 text-white"
               >
                 ФИЛЬМЫ
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to={routes.serials}
                 className="header__nav-link nav-link px-2 me-2 text-white"
               >
                 СЕРИАЛЫ
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to={routes.anime}
                 className="header__nav-link nav-link px-2 me-2 text-white"
               >
                 АНИМЕ
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to={routes.books}
                 className="header__nav-link nav-link px-2 me-2 text-white"
               >
                 КНИГИ
-              </a>
+              </Link>
             </li>
+            {isAdmin ? (
+              <li>
+                <Link
+                  to={routes.allUsers}
+                  className="header__nav-link nav-link px-2 me-2 text-white"
+                >
+                  ПОЛЬЗОВАТЕЛИ
+                </Link>
+              </li>
+            ) : null}
           </ul>
 
           <form className="header__form col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -76,12 +90,37 @@ function Header() {
           </form>
 
           <div className="text-end">
+            {!isLogged ? (
+              <button
+                type="button"
+                className="header__button btn btn-outline-light me-2"
+              >
+                Войти
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="header__button btn btn-outline-light me-2"
+              >
+                <i className="bi bi-person-fill me-1"></i>
+                Профиль
+              </button>
+            )}
+          </div>
+          <div class="btn-group">
             <button
               type="button"
-              className="header__button btn btn-outline-light me-2"
+              class="header__lang-button btn btn-outline-light dropdown-toggle text-white"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
             >
-              Войти
+              <i className="bi bi-globe me-1"></i>
+              RU
             </button>
+            <ul class="header__lang-dropdown-menu dropdown-menu dropdown-menu-dark">
+              <li class="header__lang-dropdown-item dropdown-item">RU</li>
+              <li class="header__lang-dropdown-item dropdown-item">EN</li>
+            </ul>
           </div>
         </div>
       </div>

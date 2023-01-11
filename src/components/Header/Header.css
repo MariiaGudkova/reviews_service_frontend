@@ -30,5 +30,34 @@
 }
 
 .header__button:hover {
+  background-color: transparent;
+  color: white;
   opacity: 0.6;
+}
+
+.header__button:active {
+  background-color: #00d1cd !important;
+  border-color: #00d1cd !important;
+  opacity: 1;
+}
+
+.header__lang-button {
+  border: none;
+}
+
+.header__lang-button:hover,
+.header__lang-button:focus,
+.header__lang-button:active {
+  background-color: transparent;
+  color: white;
+  opacity: 0.6;
+}
+
+.header__lang-dropdown-menu {
+  background-color: #212529;
+  border: none;
+}
+
+.header__lang-dropdown-item:active {
+  background-color: #00d1cd;
 }
