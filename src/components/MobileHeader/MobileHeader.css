@@ -109,10 +109,10 @@
   opacity: 0.6;
 }
 
-.mobile-header__lang-dropdown-menu {
+.mobile-header ul.dropdown-menu.show {
   text-align: center;
   border: none;
-  transform: translate3d(123px, -54px, 0px);
+  transform: translate3d(123px, -54px, 0px) !important;
 }
 
 .mobile-header__lang-dropdown-item {

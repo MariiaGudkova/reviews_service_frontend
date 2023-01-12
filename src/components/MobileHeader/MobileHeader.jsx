@@ -8,7 +8,7 @@ function MobileHeader(props) {
   const { isLogged, isAdmin } = props;
 
   return (
-    <header className="mobile-header p-3 bg-dark text-white">
+    <header className="mobile-header p-3 bg-dark text-white mb-5">
       <div className="container">
         <div className="d-flex flex-wrap align-items-center justify-content-between">
           <div className="d-flex flew-row align-items-baseline">
@@ -88,7 +88,7 @@ function MobileHeader(props) {
                   <i className="bi bi-globe me-1"></i>
                   RU
                 </button>
-                <ul className="dropdown-menu mobile-header__lang-dropdown-menu">
+                <ul className="dropdown-menu">
                   <li className="mobile-header__lang-dropdown-item dropdown-item">
                     RU
                   </li>
@@ -155,7 +155,7 @@ function MobileHeader(props) {
               {!isLogged ? (
                 <button
                   type="button"
-                  className="btn text-white fs-5 mobile-header__button"
+                  className="btn text-white fs-5 fs-5-mob mobile-header__button"
                 >
                   Войти
                 </button>
