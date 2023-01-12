@@ -1,0 +1,9 @@
+.main-tag {
+  font-family: "Roboto", "sans-serif";
+  background-color: rgba(0, 209, 205, 0.22);
+  cursor: pointer;
+}
+
+.main-tag:hover {
+  opacity: 0.6;
+}
