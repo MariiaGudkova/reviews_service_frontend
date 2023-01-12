@@ -1,0 +1,7 @@
+.container-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  row-gap: 15px;
+  column-gap: 10px;
+  margin-bottom: 70px;
+}
