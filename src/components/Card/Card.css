@@ -1,0 +1,31 @@
+.card {
+  cursor: pointer;
+}
+
+.card-img {
+  object-position: center;
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+}
+
+.card-img-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.card-img-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.card-title {
+  margin-bottom: 0;
+}
+
+.card-author {
+  opacity: 0.6;
+}
+
+.card .badge {
+  border-radius: 100%;
+  background-color: rgba(0, 209, 205, 1);
+}
