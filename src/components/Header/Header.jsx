@@ -8,7 +8,7 @@ function Header(props) {
   const { isLogged, isAdmin } = props;
 
   return (
-    <header className="header p-3 bg-dark text-white">
+    <header className="header p-3 bg-dark text-white mb-5">
       <div className="container">
         <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <Link
