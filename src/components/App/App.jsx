@@ -5,6 +5,7 @@ import { routes } from "../../utils/routes";
 import Header from "../Header/Header";
 import MobileHeader from "../MobileHeader/MobileHeader";
 import Main from "../Main/Main";
+import Footer from "../Footer/Footer";
 
 function App() {
   const [isLogged, setIsLogged] = React.useState(false);
@@ -16,6 +17,7 @@ function App() {
         <Header isLogged={isLogged} isAdmin={isAdmin} />
         <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
         <Main />
+        <Footer isAdmin={isAdmin} />
       </Route>
     </Switch>
   );

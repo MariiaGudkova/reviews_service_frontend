@@ -1,0 +1,29 @@
+li {
+  list-style: none;
+}
+
+.footer__nav-link:hover {
+  opacity: 0.6;
+}
+
+.ftco-animate:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 480px) {
+  .footer .px-2 {
+    padding-right: 0 !important;
+  }
+
+  .footer .me-2 {
+    margin-right: 0 !important;
+  }
+
+  .footer__nav-link {
+    font-size: 14px;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+}
