@@ -1,7 +1,25 @@
 .container-card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   row-gap: 15px;
   column-gap: 10px;
+}
+
+.cardlist-button-container {
   margin-bottom: 70px;
+}
+
+.cardlist-button-container-big-margin {
+  margin-bottom: 140px;
+}
+
+.cardlist-button {
+  background-color: rgba(0, 209, 205, 0.22);
+  font-weight: bold;
+}
+
+.cardlist-button:hover,
+.cardlist-button:active {
+  opacity: 0.6;
+  background-color: rgba(0, 209, 205, 0.22);
 }

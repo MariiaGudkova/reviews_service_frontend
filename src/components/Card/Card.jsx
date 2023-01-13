@@ -9,7 +9,7 @@ function Card(props) {
         <div className="container d-flex align-items-center justify-content-start mb-2">
           <h5
             className="card-title fs-4 fw-weight-bold me-2 text-truncate"
-            style={{ "max-width": "170px" }}
+            style={{ maXwidth: "170px", width: "170px" }}
           >
             {review.title}
           </h5>
@@ -21,7 +21,7 @@ function Card(props) {
         <div className="container d-flex align-items-baselineS justify-content-start card-author">
           <p
             className="card-text me-3 text-truncate"
-            style={{ "max-width": "90px", width: "90px" }}
+            style={{ maXwidth: "85px", width: "85px" }}
           >
             {review.author}
           </p>
