@@ -10,6 +10,20 @@ li {
   opacity: 0.6;
 }
 
+.copyright {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__nav-link {
+    font-size: 14px;
+  }
+
+  .copyright {
+    font-size: 10px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .footer .px-2 {
     padding-right: 0 !important;
@@ -17,13 +31,5 @@ li {
 
   .footer .me-2 {
     margin-right: 0 !important;
-  }
-
-  .footer__nav-link {
-    font-size: 14px;
-  }
-
-  .copyright {
-    font-size: 12px;
   }
 }
