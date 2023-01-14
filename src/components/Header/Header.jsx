@@ -5,7 +5,8 @@ import headerLogo from "../../images/header_logo.png";
 import { routes } from "../../utils/routes";
 
 function Header(props) {
-  const { isLogged, isAdmin } = props;
+  const { isLogged, isAdmin, isLogin } = props;
+  const buttonText = isLogin ? "Регистрация" : "Войти";
 
   return (
     <header className="header p-3 bg-dark text-white mb-5">
@@ -91,20 +92,20 @@ function Header(props) {
 
           <div className="text-end">
             {!isLogged ? (
-              <button
-                type="button"
+              <Link
+                to={routes.signIn}
                 className="header__button btn btn-outline-light me-2"
               >
-                Войти
-              </button>
+                {buttonText}
+              </Link>
             ) : (
-              <button
-                type="button"
+              <Link
+                to={routes.profile}
                 className="header__button btn btn-outline-light me-2"
               >
                 <i className="bi bi-person-fill me-1"></i>
                 Профиль
-              </button>
+              </Link>
             )}
           </div>
           <div className="btn-group">

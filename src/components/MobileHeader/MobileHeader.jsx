@@ -5,7 +5,8 @@ import headerLogo from "../../images/header_logo.png";
 import { routes } from "../../utils/routes";
 
 function MobileHeader(props) {
-  const { isLogged, isAdmin } = props;
+  const { isLogged, isAdmin, isLogin } = props;
+  const buttonText = isLogin ? "Регистрация" : "Войти";
 
   return (
     <header className="mobile-header p-3 bg-dark text-white mb-5">
@@ -157,7 +158,7 @@ function MobileHeader(props) {
                   type="button"
                   className="btn text-white fs-5 fs-5-mob mobile-header__button"
                 >
-                  Войти
+                  {buttonText}
                 </button>
               ) : (
                 <button
