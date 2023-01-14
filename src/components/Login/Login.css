@@ -1,0 +1,36 @@
+.btn-color {
+  background-color: #212529;
+  color: #fff;
+}
+
+.btn-color:hover {
+  background-color: #212529;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.profile-image-pic {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.container-login .card {
+  border: none;
+}
+
+.cardbody-color {
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+.social:hover {
+  opacity: 0.8;
+}
+
+.registr:hover {
+  opacity: 0.8;
+}
