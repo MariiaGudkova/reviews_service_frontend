@@ -27,9 +27,20 @@ li {
 @media screen and (max-width: 480px) {
   .footer .px-2 {
     padding-right: 0 !important;
+    padding-left: 4px !important;
   }
 
   .footer .me-2 {
     margin-right: 0 !important;
+  }
+
+  .footer__nav-link {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer .px-2 {
+    padding-left: 4px !important;
   }
 }
