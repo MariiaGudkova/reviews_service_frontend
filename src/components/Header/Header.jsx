@@ -93,7 +93,7 @@ function Header(props) {
           <div className="text-end">
             {!isLogged ? (
               <Link
-                to={routes.signIn}
+                to={isLogin ? routes.signUp : routes.signIn}
                 className="header__button btn btn-outline-light me-2"
               >
                 {buttonText}
@@ -122,6 +122,9 @@ function Header(props) {
               <li className="header__lang-dropdown-item dropdown-item">RU</li>
               <li className="header__lang-dropdown-item dropdown-item">EN</li>
             </ul>
+          </div>
+          <div className="text-end light-theme">
+            <i className="bi bi-brightness-high fs-5"></i>
           </div>
         </div>
       </div>

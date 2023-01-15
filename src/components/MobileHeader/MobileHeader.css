@@ -127,7 +127,7 @@
   opacity: 0.6;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1350px) {
   .mobile-header {
     display: block;
   }
@@ -135,7 +135,7 @@
 
 @media screen and (max-width: 480px) {
   .mobile-header__img {
-    width: 105px;
+    display: none;
   }
 
   .mobile-header__button {

@@ -154,21 +154,24 @@ function MobileHeader(props) {
             </div>
             <div className="text-end">
               {!isLogged ? (
-                <button
-                  type="button"
-                  className="btn text-white fs-5 fs-5-mob mobile-header__button"
+                <Link
+                  to={isLogin ? routes.signUp : routes.signIn}
+                  className="btn text-white fs-5 fs-5-mob mobile-header__button mobile-header__button-registr me-2 text-truncate"
                 >
                   {buttonText}
-                </button>
+                </Link>
               ) : (
-                <button
-                  type="button"
-                  className="mobile-header__button btn text-white fs-5"
+                <Link
+                  to={routes.profile}
+                  className="mobile-header__button btn text-white fs-5 me-2"
                 >
                   <i className="bi bi-person-fill me-1"></i>
                   Профиль
-                </button>
+                </Link>
               )}
+            </div>
+            <div className="text-end light-theme">
+              <i className="bi bi-brightness-high fs-4"></i>
             </div>
           </div>
         </div>
