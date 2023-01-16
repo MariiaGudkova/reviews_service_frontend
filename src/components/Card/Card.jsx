@@ -23,7 +23,10 @@ function Card(props) {
           >
             {review.title}
           </h5>
-          <span className="badge text-dark">
+          <span
+            className="badge text-dark d-flex align-items-baseline justify-content-center"
+            style={{ width: "66px" }}
+          >
             <span className="fs-4">{review.averageValue}/</span>
             <span className="fs-6">5</span>
           </span>

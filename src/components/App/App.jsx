@@ -9,6 +9,8 @@ import Footer from "../Footer/Footer";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import Profile from "../Profile/Profile";
+import Review from "../Review/Review";
+import { userReviews } from "../../utils/constants";
 
 function App() {
   const [isLogged, setIsLogged] = React.useState(true);
@@ -38,6 +40,12 @@ function App() {
         <Header isLogged={isLogged} isAdmin={isAdmin} />
         <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
         <Profile />
+        <Footer isAdmin={isAdmin} />
+      </Route>
+      <Route exact path={routes.review}>
+        <Header isLogged={isLogged} isAdmin={isAdmin} />
+        <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
+        <Review review={userReviews[0]} />
         <Footer isAdmin={isAdmin} />
       </Route>
     </Switch>

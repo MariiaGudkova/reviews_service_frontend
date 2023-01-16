@@ -1,6 +1,7 @@
 import chainsawmanImg from "../images/chainsawman.jpg";
 import cyberpunk2077Img from "../images/cyberpunk2077.jpg";
 import separationImg from "../images/separation.jpg";
+import separationSecImg from '../images/separation_second_poster.jpg'
 import dragonhouseImg from "../images/dragonhouse.jpg";
 import avatarImg from "../images/avatar2.jpg";
 import warGodsImg from "../images/god-of-war-ragnarok.jpg";
@@ -14,7 +15,7 @@ export const popularReviews = [{id: 1, title: 'Человек-бензопила
 
 export const newReviews=[{id: 1, title: 'Человек-бензопила', averageValue: 4.6, author: 'vasya edadil',  likes: 5, dislikes: 1, views: 24, cover: chainsawmanImg }, {id: 2, title: 'Cyberpunk 2077', averageValue: 4.5, author: 'Кот Матроскин', likes: 6, dislikes: 2, views: 15, cover: cyberpunk2077Img }, {id: 3, title: 'Разделение', averageValue: 4.8, author: 'проходимец', likes: 4, dislikes: 0, views: 30, cover: separationImg }]
 
-export const userReviews = [{id: 3, title: 'Разделение', averageValue: 4.8, author: 'Клавдия', likes: 4, dislikes: 0, views: 30, cover: separationImg }, {id: 4, title: 'Дом Дракона', averageValue: 5, author: 'Клавдия', likes: 10, dislikes: 1, views: 50, cover: dragonhouseImg }, {id: 7, title: 'God of War: Ragnarök', averageValue: 4.5, author: 'Клавдия', likes: 8, dislikes: 1, views: 30, cover: warGodsImg }];
+export const userReviews = [{id: 3, title: 'Разделение', averageValue: 4.8, author: 'Клавдия', likes: 4, dislikes: 0, views: 30, cover: separationImg, secondCover: separationSecImg,  date:'16/01/2023 21:45' }, {id: 4, title: 'Дом Дракона', averageValue: 5, author: 'Клавдия', likes: 10, dislikes: 1, views: 50, cover: dragonhouseImg }, {id: 7, title: 'God of War: Ragnarök', averageValue: 4.5, author: 'Клавдия', likes: 8, dislikes: 1, views: 30, cover: warGodsImg }];
 
 export const socialLinks = {
   twitter: 'https://twitter.com/',

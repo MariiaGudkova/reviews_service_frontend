@@ -1,3 +1,48 @@
+.review {
+  font-family: "Roboto", "sans-serif";
+}
+
+.review-nav {
+  color: black;
+  width: 50px;
+}
+
+.review-nav:hover {
+  opacity: 0.6;
+}
+
+.review-about {
+  font-size: 14px;
+}
+
+.review-photo {
+  height: 60px;
+  object-fit: cover;
+}
+
+.review-link {
+  color: black;
+  text-decoration: underline;
+}
+
+.review-link {
+  font-weight: 500;
+}
+
+.review-link:hover {
+  font-weight: 700;
+}
+
+.review .badge {
+  border-radius: 100%;
+  background-color: rgba(0, 209, 205, 1);
+}
+
+.review-description {
+  font-size: 18px;
+  white-space: pre-line;
+}
+
 .rating-wrapper {
   display: inline-flex;
   direction: rtl !important;

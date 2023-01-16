@@ -9,5 +9,6 @@ export const routes = {
   anime: '/anime',
   books: '/books',
   allUsers: '/allUsers',
+  review: '/review',
   notFound: 'notFound',
 }
