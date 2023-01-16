@@ -1,5 +1,6 @@
 .card {
   cursor: pointer;
+  position: relative;
 }
 
 .card-img {
@@ -23,6 +24,23 @@
 
 .card-author {
   opacity: 0.6;
+}
+
+.profile-buttons {
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+}
+
+.icon-button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  opacity: 0.6;
+}
+
+.icon-button:hover {
+  opacity: 1;
 }
 
 .card .badge {

@@ -1,11 +1,21 @@
 import "./Card.css";
 
 function Card(props) {
-  const { review } = props;
+  const { review, isProfile } = props;
   return (
     <div className="card text-white">
       <img src={review.cover} className="card-img" alt={review.title} />
       <div className="card-img-overlay d-flex flex-column align-items-start justify-content-end">
+        {isProfile ? (
+          <div className="container d-flex align-items-baseline justify-content-between align-self-start profile-buttons">
+            <button type="button" className="icon-button">
+              <i className="bi bi-pencil-fill"></i>
+            </button>
+            <button type="button" className="icon-button">
+              <i className="bi bi-trash3-fill"></i>
+            </button>
+          </div>
+        ) : null}
         <div className="container d-flex align-items-center justify-content-start mb-2">
           <h5
             className="card-title fs-4 fw-weight-bold me-2 text-truncate"
@@ -18,7 +28,7 @@ function Card(props) {
             <span className="fs-6">5</span>
           </span>
         </div>
-        <div className="container d-flex align-items-baselineS justify-content-start card-author">
+        <div className="container d-flex align-items-baseline justify-content-start card-author">
           <p
             className="card-text me-3 text-truncate"
             style={{ maXwidth: "85px", width: "85px" }}
