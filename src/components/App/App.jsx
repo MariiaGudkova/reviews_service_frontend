@@ -8,9 +8,10 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
+import Profile from "../Profile/Profile";
 
 function App() {
-  const [isLogged, setIsLogged] = React.useState(false);
+  const [isLogged, setIsLogged] = React.useState(true);
   const [isAdmin, setIsAdmin] = React.useState(false);
 
   return (
@@ -31,6 +32,12 @@ function App() {
         <Header isLogged={isLogged} isAdmin={isAdmin} />
         <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
         <Register />
+        <Footer isAdmin={isAdmin} />
+      </Route>
+      <Route exact path={routes.profile}>
+        <Header isLogged={isLogged} isAdmin={isAdmin} />
+        <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
+        <Profile />
         <Footer isAdmin={isAdmin} />
       </Route>
     </Switch>

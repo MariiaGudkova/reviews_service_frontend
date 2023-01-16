@@ -14,6 +14,8 @@ export const popularReviews = [{id: 1, title: 'Человек-бензопила
 
 export const newReviews=[{id: 1, title: 'Человек-бензопила', averageValue: 4.6, author: 'vasya edadil',  likes: 5, dislikes: 1, views: 24, cover: chainsawmanImg }, {id: 2, title: 'Cyberpunk 2077', averageValue: 4.5, author: 'Кот Матроскин', likes: 6, dislikes: 2, views: 15, cover: cyberpunk2077Img }, {id: 3, title: 'Разделение', averageValue: 4.8, author: 'проходимец', likes: 4, dislikes: 0, views: 30, cover: separationImg }]
 
+export const userReviews = [{id: 3, title: 'Разделение', averageValue: 4.8, author: 'Клавдия', likes: 4, dislikes: 0, views: 30, cover: separationImg }, {id: 4, title: 'Дом Дракона', averageValue: 5, author: 'Клавдия', likes: 10, dislikes: 1, views: 50, cover: dragonhouseImg }, {id: 7, title: 'God of War: Ragnarök', averageValue: 4.5, author: 'Клавдия', likes: 8, dislikes: 1, views: 30, cover: warGodsImg }];
+
 export const socialLinks = {
   twitter: 'https://twitter.com/',
   facebook: 'https://www.facebook.com/',

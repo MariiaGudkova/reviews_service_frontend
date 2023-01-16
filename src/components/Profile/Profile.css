@@ -1,0 +1,16 @@
+.profile {
+  font-family: "Roboto", "sans-serif";
+}
+
+.profile-head {
+  transform: translateY(5rem);
+}
+
+.profile-name {
+  margin-bottom: 60px;
+}
+
+.profile-photo {
+  object-fit: cover;
+  height: 130px;
+}
