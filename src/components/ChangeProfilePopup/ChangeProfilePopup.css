@@ -1,0 +1,19 @@
+.modal {
+  font-family: "Roboto", "sans-serif";
+}
+
+.modal-header {
+  border: none;
+}
+
+.profile-input:focus {
+  outline: rgba(0, 209, 205, 0.22);
+}
+
+.modal-footer {
+  border: none;
+}
+
+.save-button {
+  font-size: 18px;
+}
