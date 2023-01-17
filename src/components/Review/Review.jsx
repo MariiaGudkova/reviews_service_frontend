@@ -1,19 +1,36 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Review.css";
 import { routes } from "../../utils/routes";
+import Star from "../Star/Star";
+import Tag from "../Tag/Tag";
+import Comment from "../Comment/Comment";
 
 function Review(props) {
   const { review } = props;
+  let route;
+  if (review.category === "Игры" || "Games") {
+    route = routes.games;
+  } else if (review.category === "Фильмы" || "Films") {
+    route = routes.films;
+  } else if (review.category === "Сериалы" || "Serials") {
+    route = routes.serials;
+  } else if (review.category === "Аниме" || "Anime") {
+    route = routes.anime;
+  } else if (review.category === "Книги" || "Books") {
+    route = routes.books;
+  }
+
   return (
-    <div className="row py-5 px-4 px-4-phone review">
+    <div className="row py-5 px-4 px-4-phone review mb-5">
       <div className="col-md-8 mx-auto">
         <div className="bg-white shadow rounded overflow-hidden">
           <div className="d-flex flex-column justify-content-start m-4">
-            <Link to={routes.baseRoute} className="review-nav mb-4 fs-3">
+            <Link to={routes.baseRoute} className="review__nav mb-4 fs-3">
               <i className="bi bi-arrow-left-circle-fill"></i>
             </Link>
             <div className="d-flex justify-content-baseline mb-2">
-              <h1 className="review-title fs-2 me-2">{review.title}</h1>
+              <h1 className="review__title fs-2 me-2">Удивительный проект</h1>
               <span
                 className="badge text-dark d-flex align-items-center"
                 style={{ width: "66px" }}
@@ -22,14 +39,14 @@ function Review(props) {
                 <span className="fs-6">5</span>
               </span>
             </div>
-            <div className="review-about d-flex align-items-baseline">
-              <div className="review-author">
-                <Link to={routes.profile} className="review-link me-2">
+            <div className="review__about d-flex align-items-baseline">
+              <div className="review__author">
+                <Link to={routes.profile} className="review__link me-2">
                   <img
                     src="https://images.unsplash.com/photo-1558499932-9609acb6f443?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                     alt="profile"
                     width="60"
-                    className="rounded-circle mb-2 img-thumbnail review-photo me-2"
+                    className="rounded-circle mb-2 img-thumbnail review__photo me-2"
                   />
                   {review.author}
                 </Link>
@@ -103,59 +120,8 @@ function Review(props) {
               <span className="visually-hidden">Следующий</span>
             </button>
           </div>
-          {/* <div className="rating-wrapper m-4">
-            <input
-              type="radio"
-              id="5-star-rating"
-              name="star-rating"
-              value="5"
-            />
-            <label htmlFor="5-star-rating" className="star-rating">
-              <i className="bi bi-star-fill d-inline-block fs-3"></i>
-            </label>
-
-            <input
-              type="radio"
-              id="4-star-rating"
-              name="star-rating"
-              value="4"
-            />
-            <label htmlFor="4-star-rating" className="star-rating star">
-              <i className="bi bi-star-fill d-inline-block fs-3"></i>
-            </label>
-
-            <input
-              type="radio"
-              id="3-star-rating"
-              name="star-rating"
-              value="3"
-            />
-            <label htmlFor="3-star-rating" className="star-rating star">
-              <i className="bi bi-star-fill d-inline-block fs-3"></i>
-            </label>
-
-            <input
-              type="radio"
-              id="2-star-rating"
-              name="star-rating"
-              value="2"
-            />
-            <label htmlFor="2-star-rating" className="star-rating star">
-              <i className="bi bi-star-fill d-inline-block fs-3"></i>
-            </label>
-
-            <input
-              type="radio"
-              id="1-star-rating"
-              name="star-rating"
-              value="1"
-            />
-            <label htmlFor="1-star-rating" className="star-rating star">
-              <i className="bi bi-star-fill d-inline-block fs-3"></i>
-            </label>
-          </div> */}
           <div
-            className="review-description m-4"
+            className="review__description m-4"
             style={{ whiteSpace: "pre-line" }}
           >
             Всем, кто охотится за необычными и оригинальными сюжетами,
@@ -196,6 +162,135 @@ function Review(props) {
             {"\n"}
             {"\n"}В общем, если вы искали что-то по-настоящему новое, начиная от
             сюжета и заканчивая картинкой, то приятного просмотра.
+          </div>
+          <div className="review__rating m-4 mt-0">
+            <Star review={review} />
+          </div>
+          <div className="review__container d-flex justify-content-start align-items-baseline">
+            <div className="review__info m-4">
+              <div className="d-flex align-items-baseline mb-2">
+                <p className="fw-bold me-2">{review.title}</p>
+                <Link
+                  to={route}
+                  className="badge rounded-pill bg-dark fs-6 review__category"
+                >
+                  {review.category}
+                </Link>
+              </div>
+              {review.tags.map((tag, index) => {
+                return <Tag info={tag} key={index} />;
+              })}
+            </div>
+            <div className="d-flex align-items-baseline">
+              <div
+                className="btn-group m-4 me-3 review__likes"
+                role="group"
+                aria-label="Basic outlined example"
+              >
+                <button
+                  type="button"
+                  className="btn btn-dark review__button-like"
+                >
+                  <i className="bi bi-hand-thumbs-up-fill me-1"></i>
+                  {review.likes}
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-dark review__button-like"
+                >
+                  <i className="bi bi-hand-thumbs-down-fill me-1"></i>
+                  {review.dislikes}
+                </button>
+              </div>
+              <span>
+                <i className="bi bi-eye-fill me-1 review__views"></i>
+                {review.views}
+              </span>
+            </div>
+          </div>
+          <div className="rating-container m-4">
+            <p className="fs-4 mb-0">Оценить рецензию</p>
+
+            <div className="rating-wrapper">
+              <input
+                type="radio"
+                id="5-star-rating"
+                name="star-rating"
+                value="5"
+              />
+              <label htmlFor="5-star-rating" className="star-rating">
+                <i className="bi bi-star-fill d-inline-block fs-3"></i>
+              </label>
+
+              <input
+                type="radio"
+                id="4-star-rating"
+                name="star-rating"
+                value="4"
+              />
+              <label htmlFor="4-star-rating" className="star-rating star">
+                <i className="bi bi-star-fill d-inline-block fs-3"></i>
+              </label>
+
+              <input
+                type="radio"
+                id="3-star-rating"
+                name="star-rating"
+                value="3"
+              />
+              <label htmlFor="3-star-rating" className="star-rating star">
+                <i className="bi bi-star-fill d-inline-block fs-3"></i>
+              </label>
+
+              <input
+                type="radio"
+                id="2-star-rating"
+                name="star-rating"
+                value="2"
+              />
+              <label htmlFor="2-star-rating" className="star-rating star">
+                <i className="bi bi-star-fill d-inline-block fs-3"></i>
+              </label>
+
+              <input
+                type="radio"
+                id="1-star-rating"
+                name="star-rating"
+                value="1"
+              />
+              <label htmlFor="1-star-rating" className="star-rating star">
+                <i className="bi bi-star-fill d-inline-block fs-3"></i>
+              </label>
+            </div>
+          </div>
+          <div className="coment-bottom bg-white p-2 px-4 mb-4">
+            <div className="d-flex flex-row align-items-center add-comment-section mt-4 mb-4">
+              <img
+                className="rounded-circle mb-2 img-thumbnail review__photo me-2"
+                src="https://i.imgur.com/qdiP4DB.jpg"
+                alt="user"
+                style={{ width: "66px" }}
+              />
+              <input
+                type="text"
+                className="form-control me-2 comment__add-input"
+                placeholder="Ваш комментарий..."
+              />
+              <button
+                className="btn btn-dark comment__add-button"
+                type="button"
+              >
+                Добавить
+              </button>
+            </div>
+            <p className="fs-5">
+              {review.comments.length < 1
+                ? review.comments.length + " " + "комментарий"
+                : review.comments.length + " " + "комментария"}
+            </p>
+            {review.comments.map((comment, i) => {
+              return <Comment comment={comment} key={i} />;
+            })}
           </div>
         </div>
       </div>
