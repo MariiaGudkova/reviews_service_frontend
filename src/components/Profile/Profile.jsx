@@ -7,7 +7,7 @@ function Profile() {
   const isProfile = true;
   return (
     <>
-      <div className="row py-5 px-4 px-4-phone profile">
+      <div className="row py-5 px-4 px-4-phone profile mb-5">
         <div className="col-md-8 mx-auto profile-container">
           <div className="bg-white shadow rounded overflow-hidden">
             <div className="px-4 pt-0 pb-5">
