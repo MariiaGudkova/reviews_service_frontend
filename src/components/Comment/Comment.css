@@ -1,0 +1,9 @@
+.commented-section {
+  background-color: #e1e6f6;
+}
+
+.comment-author {
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: underline;
+}
