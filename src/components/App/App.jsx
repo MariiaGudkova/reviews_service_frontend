@@ -45,7 +45,7 @@ function App() {
       <Route exact path={routes.review}>
         <Header isLogged={isLogged} isAdmin={isAdmin} />
         <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
-        <Review review={userReviews[0]} />
+        <Review review={userReviews[0]} isLogged={isLogged} />
         <Footer isAdmin={isAdmin} />
       </Route>
     </Switch>

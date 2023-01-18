@@ -120,6 +120,16 @@ input:checked ~ label {
 }
 
 @media screen and (max-width: 480px) {
+  .py-5 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .px-4 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
   .comment__add-button {
     font-size: 12px;
     max-width: 60px;

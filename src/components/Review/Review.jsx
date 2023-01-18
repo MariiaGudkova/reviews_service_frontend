@@ -7,7 +7,7 @@ import Tag from "../Tag/Tag";
 import Comment from "../Comment/Comment";
 
 function Review(props) {
-  const { review } = props;
+  const { review, isLogged } = props;
   let route;
   if (review.category === "Игры" || "Games") {
     route = routes.games;
@@ -182,107 +182,128 @@ function Review(props) {
               })}
             </div>
             <div className="d-flex align-items-baseline">
-              <div
-                className="btn-group m-4 me-3 review__likes"
-                role="group"
-                aria-label="Basic outlined example"
-              >
-                <button
-                  type="button"
-                  className="btn btn-dark review__button-like"
+              {isLogged ? (
+                <div
+                  className="btn-group m-4 me-3 review__likes"
+                  role="group"
+                  aria-label="Basic outlined example"
                 >
-                  <i className="bi bi-hand-thumbs-up-fill me-1"></i>
-                  {review.likes}
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-dark review__button-like"
+                  <button
+                    type="button"
+                    className="btn btn-dark review__button-like"
+                  >
+                    <i className="bi bi-hand-thumbs-up-fill me-1"></i>
+                    {review.likes}
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-dark review__button-like"
+                  >
+                    <i className="bi bi-hand-thumbs-down-fill me-1"></i>
+                    {review.dislikes}
+                  </button>
+                </div>
+              ) : (
+                <div
+                  className="btn-group m-4 me-3 review__likes"
+                  role="group"
+                  aria-label="Basic outlined example"
                 >
-                  <i className="bi bi-hand-thumbs-down-fill me-1"></i>
-                  {review.dislikes}
-                </button>
-              </div>
+                  <span className="me-2">
+                    <i className="bi bi-hand-thumbs-up-fill me-1"></i>
+                    {review.likes}
+                  </span>
+                  <span>
+                    <i className="bi bi-hand-thumbs-down-fill me-1"></i>
+                    {review.dislikes}
+                  </span>
+                </div>
+              )}
               <span>
                 <i className="bi bi-eye-fill me-1 review__views"></i>
                 {review.views}
               </span>
             </div>
           </div>
-          <div className="rating-container m-4">
-            <p className="fs-4 mb-0">Оценить рецензию</p>
+          {isLogged ? (
+            <div className="rating-container m-4">
+              <p className="fs-4 mb-0">Оценить рецензию</p>
 
-            <div className="rating-wrapper">
-              <input
-                type="radio"
-                id="5-star-rating"
-                name="star-rating"
-                value="5"
-              />
-              <label htmlFor="5-star-rating" className="star-rating">
-                <i className="bi bi-star-fill d-inline-block fs-3"></i>
-              </label>
+              <div className="rating-wrapper">
+                <input
+                  type="radio"
+                  id="5-star-rating"
+                  name="star-rating"
+                  value="5"
+                />
+                <label htmlFor="5-star-rating" className="star-rating">
+                  <i className="bi bi-star-fill d-inline-block fs-3"></i>
+                </label>
 
-              <input
-                type="radio"
-                id="4-star-rating"
-                name="star-rating"
-                value="4"
-              />
-              <label htmlFor="4-star-rating" className="star-rating star">
-                <i className="bi bi-star-fill d-inline-block fs-3"></i>
-              </label>
+                <input
+                  type="radio"
+                  id="4-star-rating"
+                  name="star-rating"
+                  value="4"
+                />
+                <label htmlFor="4-star-rating" className="star-rating star">
+                  <i className="bi bi-star-fill d-inline-block fs-3"></i>
+                </label>
 
-              <input
-                type="radio"
-                id="3-star-rating"
-                name="star-rating"
-                value="3"
-              />
-              <label htmlFor="3-star-rating" className="star-rating star">
-                <i className="bi bi-star-fill d-inline-block fs-3"></i>
-              </label>
+                <input
+                  type="radio"
+                  id="3-star-rating"
+                  name="star-rating"
+                  value="3"
+                />
+                <label htmlFor="3-star-rating" className="star-rating star">
+                  <i className="bi bi-star-fill d-inline-block fs-3"></i>
+                </label>
 
-              <input
-                type="radio"
-                id="2-star-rating"
-                name="star-rating"
-                value="2"
-              />
-              <label htmlFor="2-star-rating" className="star-rating star">
-                <i className="bi bi-star-fill d-inline-block fs-3"></i>
-              </label>
+                <input
+                  type="radio"
+                  id="2-star-rating"
+                  name="star-rating"
+                  value="2"
+                />
+                <label htmlFor="2-star-rating" className="star-rating star">
+                  <i className="bi bi-star-fill d-inline-block fs-3"></i>
+                </label>
 
-              <input
-                type="radio"
-                id="1-star-rating"
-                name="star-rating"
-                value="1"
-              />
-              <label htmlFor="1-star-rating" className="star-rating star">
-                <i className="bi bi-star-fill d-inline-block fs-3"></i>
-              </label>
+                <input
+                  type="radio"
+                  id="1-star-rating"
+                  name="star-rating"
+                  value="1"
+                />
+                <label htmlFor="1-star-rating" className="star-rating star">
+                  <i className="bi bi-star-fill d-inline-block fs-3"></i>
+                </label>
+              </div>
             </div>
-          </div>
-          <div className="coment-bottom bg-white p-2 px-4 mb-4">
-            <div className="d-flex flex-row align-items-center add-comment-section mt-4 mb-4">
-              <img
-                className="rounded-circle mb-2 img-thumbnail review__photo me-2"
-                src="https://i.imgur.com/qdiP4DB.jpg"
-                alt="user"
-                style={{ width: "66px" }}
-              />
-              <input
-                type="text"
-                className="form-control me-2 comment__add-input"
-                placeholder="Ваш комментарий..."
-              />
-              <button
-                className="btn btn-dark comment__add-button"
-                type="button"
-              >
-                Добавить
-              </button>
-            </div>
+          ) : null}
+          <div className="coment-bottom bg-white m-4">
+            {isLogged ? (
+              <div className="d-flex flex-row align-items-center add-comment-section mt-4 mb-4">
+                <img
+                  className="rounded-circle mb-2 img-thumbnail review__photo me-2"
+                  src="https://i.imgur.com/qdiP4DB.jpg"
+                  alt="user"
+                  style={{ width: "66px" }}
+                />
+                <input
+                  type="text"
+                  className="form-control me-2 comment__add-input"
+                  placeholder="Ваш комментарий..."
+                />
+                <button
+                  className="btn btn-dark comment__add-button"
+                  type="button"
+                >
+                  Добавить
+                </button>
+              </div>
+            ) : null}
             <p className="fs-5">
               {review.comments.length < 1
                 ? review.comments.length + " " + "комментарий"
