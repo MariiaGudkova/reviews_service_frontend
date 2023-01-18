@@ -12,6 +12,11 @@ import Profile from "../Profile/Profile";
 import Review from "../Review/Review";
 import { userReviews } from "../../utils/constants";
 import Users from "../Users/Users";
+import Games from "../Games/Games";
+import Films from "../Films/Films";
+import Serials from "../Serials/Serials";
+import Anime from "../Anime/Anime";
+import Books from "../Books/Books";
 
 function App() {
   const [isLogged, setIsLogged] = React.useState(true);
@@ -53,6 +58,36 @@ function App() {
         <Header isLogged={isLogged} isAdmin={isAdmin} />
         <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
         <Users />
+        <Footer />
+      </Route>
+      <Route exact path={routes.games}>
+        <Header isLogged={isLogged} isAdmin={isAdmin} />
+        <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
+        <Games />
+        <Footer />
+      </Route>
+      <Route exact path={routes.films}>
+        <Header isLogged={isLogged} isAdmin={isAdmin} />
+        <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
+        <Films />
+        <Footer />
+      </Route>
+      <Route exact path={routes.serials}>
+        <Header isLogged={isLogged} isAdmin={isAdmin} />
+        <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
+        <Serials />
+        <Footer />
+      </Route>
+      <Route exact path={routes.anime}>
+        <Header isLogged={isLogged} isAdmin={isAdmin} />
+        <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
+        <Anime />
+        <Footer />
+      </Route>
+      <Route exact path={routes.books}>
+        <Header isLogged={isLogged} isAdmin={isAdmin} />
+        <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
+        <Books />
         <Footer />
       </Route>
     </Switch>
