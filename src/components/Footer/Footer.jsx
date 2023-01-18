@@ -4,7 +4,6 @@ import { routes } from "../../utils/routes";
 import { socialLinks } from "../../utils/constants";
 
 function Footer(props) {
-  const { isAdmin } = props;
   return (
     <footer className="footer p-3 bg-dark text-white">
       <div className="container">
@@ -41,16 +40,6 @@ function Footer(props) {
               >
                 КНИГИ
               </Link>
-              {isAdmin ? (
-                <li>
-                  <Link
-                    to={routes.allUsers}
-                    className="header__nav-link nav-link px-2 me-2 text-white"
-                  >
-                    ПОЛЬЗОВАТЕЛИ
-                  </Link>
-                </li>
-              ) : null}
             </div>
             <ul className="d-flex justify-content-center ftco-footer-social p-0">
               <li className="ftco-animate">

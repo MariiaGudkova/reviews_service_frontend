@@ -11,10 +11,11 @@ import Register from "../Register/Register";
 import Profile from "../Profile/Profile";
 import Review from "../Review/Review";
 import { userReviews } from "../../utils/constants";
+import Users from "../Users/Users";
 
 function App() {
   const [isLogged, setIsLogged] = React.useState(true);
-  const [isAdmin, setIsAdmin] = React.useState(false);
+  const [isAdmin, setIsAdmin] = React.useState(true);
 
   return (
     <Switch>
@@ -22,31 +23,37 @@ function App() {
         <Header isLogged={isLogged} isAdmin={isAdmin} />
         <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
         <Main />
-        <Footer isAdmin={isAdmin} />
+        <Footer />
       </Route>
       <Route exact path={routes.signIn}>
         <Header isLogged={isLogged} isAdmin={isAdmin} isLogin={true} />
         <MobileHeader isLogged={isLogged} isAdmin={isAdmin} isLogin={true} />
         <Login />
-        <Footer isAdmin={isAdmin} />
+        <Footer />
       </Route>
       <Route exact path={routes.signUp}>
         <Header isLogged={isLogged} isAdmin={isAdmin} />
         <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
         <Register />
-        <Footer isAdmin={isAdmin} />
+        <Footer />
       </Route>
       <Route exact path={routes.profile}>
         <Header isLogged={isLogged} isAdmin={isAdmin} />
         <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
         <Profile />
-        <Footer isAdmin={isAdmin} />
+        <Footer />
       </Route>
       <Route exact path={routes.review}>
         <Header isLogged={isLogged} isAdmin={isAdmin} />
         <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
         <Review review={userReviews[0]} isLogged={isLogged} />
-        <Footer isAdmin={isAdmin} />
+        <Footer />
+      </Route>
+      <Route exact path={routes.allUsers}>
+        <Header isLogged={isLogged} isAdmin={isAdmin} />
+        <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
+        <Users />
+        <Footer />
       </Route>
     </Switch>
   );
