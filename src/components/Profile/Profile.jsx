@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import "./Profile.css";
 import CardList from "../CardList/CardList";
 import { userReviews } from "../../utils/constants";
 import ChangeProfilePopup from "../ChangeProfilePopup/ChangeProfilePopup";
+import { routes } from "../../utils/routes";
 
 function Profile() {
   const isProfile = true;
@@ -31,12 +33,12 @@ function Profile() {
                     >
                       Изменить
                     </button>
-                    <button
-                      type="button"
+                    <Link
+                      to={routes.createReview}
                       className="btn cardlist-button profile-button btn-sm btn-block"
                     >
                       Новый обзор
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

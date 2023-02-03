@@ -17,6 +17,7 @@ import Films from "../Films/Films";
 import Serials from "../Serials/Serials";
 import Anime from "../Anime/Anime";
 import Books from "../Books/Books";
+import CreateReviewForm from "../CreateReviewForm/CreateReviewForm";
 
 function App() {
   const [isLogged, setIsLogged] = React.useState(true);
@@ -46,6 +47,12 @@ function App() {
         <Header isLogged={isLogged} isAdmin={isAdmin} />
         <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
         <Profile />
+        <Footer />
+      </Route>
+      <Route exact path={routes.createReview}>
+        <Header isLogged={isLogged} isAdmin={isAdmin} />
+        <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
+        <CreateReviewForm />
         <Footer />
       </Route>
       <Route exact path={routes.review}>

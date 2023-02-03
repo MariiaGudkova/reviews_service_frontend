@@ -10,5 +10,6 @@ export const routes = {
   books: '/books',
   allUsers: '/allUsers',
   review: '/review',
+  createReview: '/createReview',
   notFound: 'notFound',
 }

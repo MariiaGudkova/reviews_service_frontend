@@ -24,3 +24,5 @@ export const socialLinks = {
   facebook: 'https://www.facebook.com/',
   instagram: 'https://www.instagram.com/',
 }
+
+export const categories = ['Игры', 'Фильмы', 'Сериалы', 'Аниме', 'Книги']
