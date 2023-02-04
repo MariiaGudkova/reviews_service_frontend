@@ -18,10 +18,12 @@ import Serials from "../Serials/Serials";
 import Anime from "../Anime/Anime";
 import Books from "../Books/Books";
 import CreateReviewForm from "../CreateReviewForm/CreateReviewForm";
+import ChangeReviewForm from "../ChangeReviewForm/ChangeReviewForm";
 
 function App() {
   const [isLogged, setIsLogged] = React.useState(true);
   const [isAdmin, setIsAdmin] = React.useState(true);
+  const [currentReview, setCurrentReview] = React.useState("");
 
   return (
     <Switch>
@@ -46,7 +48,7 @@ function App() {
       <Route exact path={routes.profile}>
         <Header isLogged={isLogged} isAdmin={isAdmin} />
         <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
-        <Profile />
+        <Profile setCurrentReview={setCurrentReview} />
         <Footer />
       </Route>
       <Route exact path={routes.createReview}>
@@ -55,10 +57,20 @@ function App() {
         <CreateReviewForm />
         <Footer />
       </Route>
+      <Route exact path={routes.changeReview}>
+        <Header isLogged={isLogged} isAdmin={isAdmin} />
+        <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
+        <ChangeReviewForm currentReview={currentReview} />
+        <Footer />
+      </Route>
       <Route exact path={routes.review}>
         <Header isLogged={isLogged} isAdmin={isAdmin} />
         <MobileHeader isLogged={isLogged} isAdmin={isAdmin} />
-        <Review review={userReviews[0]} isLogged={isLogged} />
+        <Review
+          review={userReviews[0]}
+          isLogged={isLogged}
+          setCurrentReview={setCurrentReview}
+        />
         <Footer />
       </Route>
       <Route exact path={routes.allUsers}>

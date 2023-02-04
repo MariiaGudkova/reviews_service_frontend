@@ -5,7 +5,8 @@ import { userReviews } from "../../utils/constants";
 import ChangeProfilePopup from "../ChangeProfilePopup/ChangeProfilePopup";
 import { routes } from "../../utils/routes";
 
-function Profile() {
+function Profile(props) {
+  const { setCurrentReview } = props;
   const isProfile = true;
   return (
     <>
@@ -69,7 +70,11 @@ function Profile() {
               <div className="d-flex align-items-center justify-content-between mb-3">
                 <h3 className="mb-0">Мои обзоры</h3>
               </div>
-              <CardList reviews={userReviews} isProfile={isProfile} />
+              <CardList
+                reviews={userReviews}
+                isProfile={isProfile}
+                setCurrentReview={setCurrentReview}
+              />
             </div>
           </div>
         </div>

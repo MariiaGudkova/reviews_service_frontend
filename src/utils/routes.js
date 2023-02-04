@@ -11,5 +11,6 @@ export const routes = {
   allUsers: '/allUsers',
   review: '/review',
   createReview: '/createReview',
+  changeReview: '/changeReview',
   notFound: 'notFound',
 }

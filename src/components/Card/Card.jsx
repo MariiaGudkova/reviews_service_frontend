@@ -1,16 +1,26 @@
+import { Link } from "react-router-dom";
 import "./Card.css";
+import { routes } from "../../utils/routes";
 
 function Card(props) {
-  const { review, isProfile } = props;
+  const { review, isProfile, setCurrentReview } = props;
+
+  function onClick() {
+    return setCurrentReview(review);
+  }
   return (
     <div className="card text-white">
       <img src={review.cover} className="card-img" alt={review.title} />
       <div className="card-img-overlay d-flex flex-column align-items-start justify-content-end">
         {isProfile ? (
           <div className="container d-flex align-items-baseline justify-content-between align-self-start profile-buttons">
-            <button type="button" className="icon-button">
+            <Link
+              to={routes.changeReview}
+              className="icon-button"
+              onClick={onClick}
+            >
               <i className="bi bi-pencil-fill"></i>
-            </button>
+            </Link>
             <button type="button" className="icon-button">
               <i className="bi bi-trash3-fill"></i>
             </button>

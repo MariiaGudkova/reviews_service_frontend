@@ -7,7 +7,7 @@ import Tag from "../Tag/Tag";
 import Comment from "../Comment/Comment";
 
 function Review(props) {
-  const { review, isLogged } = props;
+  const { review, isLogged, setCurrentReview } = props;
   let route;
   if (review.category === "Игры" || "Games") {
     route = routes.games;
@@ -21,14 +21,27 @@ function Review(props) {
     route = routes.books;
   }
 
+  function onClick() {
+    return setCurrentReview(review);
+  }
+
   return (
     <div className="row py-5 px-4 px-4-phone review mb-5">
       <div className="col-md-8 mx-auto">
         <div className="bg-white shadow rounded overflow-hidden">
           <div className="d-flex flex-column justify-content-start m-4">
-            <Link to={routes.baseRoute} className="review__nav mb-4 fs-3">
-              <i className="bi bi-arrow-left-circle-fill"></i>
-            </Link>
+            <div className="d-flex flex-row justify-content-between align-items-start">
+              <Link to={routes.baseRoute} className="review__nav mb-4 fs-3">
+                <i className="bi bi-arrow-left-circle-fill"></i>
+              </Link>
+              <Link
+                to={routes.changeReview}
+                className="d-flex justify-content-center align-items-center btn btn-dark review__change"
+                onClick={onClick}
+              >
+                <i className="bi bi-pencil-fill review__change-logo"></i>
+              </Link>
+            </div>
             <div className="d-flex justify-content-baseline mb-2">
               <h1 className="review__title fs-2 me-2">Удивительный проект</h1>
               <span

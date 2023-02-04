@@ -2,12 +2,19 @@ import "./CardList.css";
 import Card from "../Card/Card";
 
 function CardList(props) {
-  const { reviews, isNew, isProfile } = props;
+  const { reviews, isNew, isProfile, setCurrentReview } = props;
   return (
     <>
       <div className="container-card-list mb-5">
         {reviews.map((review) => {
-          return <Card review={review} key={review.id} isProfile={isProfile} />;
+          return (
+            <Card
+              review={review}
+              key={review.id}
+              isProfile={isProfile}
+              setCurrentReview={setCurrentReview}
+            />
+          );
         })}
       </div>
       <div
